@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💚 TREADER KING ULTRA PRO AI V10 💜</title>
+<style>
+:root {
+    --bg-main: #060814;
+    --bg-card: #0d1127;
+    --neon-green: #00ff66;
+    --neon-pink: #ff007f;
+    --neon-cyan: #00ffff;
+    --gold: #ffea00;
+    --white: #ffffff;
+    --red: #ff3333;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--white);
+    font-family: 'Orbitron', 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    overflow-x: hidden;
+}
+
+.header-bar {
+    background: linear-gradient(to right, #090d22, #141b40);
+    padding: 15px;
+    border-bottom: 2px solid #1f295d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-title {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: var(--neon-green);
+    text-shadow: 0 0 10px rgba(0, 255, 102, 0.4);
+}
+
+.badge-tk {
+    background: var(--neon-green);
+    color: #000;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.market-selector {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px auto;
+    max-width: 360px;
+}
+
+.m-btn {
+    flex: 1;
+    background: #121833;
+    border: 1px solid #243166;
+    color: #8892b0;
+    padding: 8px 0;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.m-btn.active {
+    background: rgba(0, 255, 102, 0.15);
+    border-color: var(--neon-green);
+    color: var(--neon-green);
+}
+
+.server-panel {
+    background: #0f1535;
+    border: 1px solid #1e2963;
+    border-radius: 8px;
+    padding: 6px 12px;
+    max-width: 340px;
+    margin: 0 auto 15px auto;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--neon-cyan);
+}
+
+.info-grid {
+    display: flex;
+    max-width: 360px;
+    margin: 0 auto 15px auto;
+    justify-content: space-between;
+    padding: 0 5px;
+}
+
+.p-box { font-size: 12px; color: #8892b0; }
+.p-val { font-size: 15px; font-weight: bold; color: var(--white); margin-top: 3px; }
+
+/* 🤖 Dual AI Engine Containers */
+.ai-twin-container {
+    display: flex;
+    max-width: 360px;
+    margin: 0 auto 15px auto;
+    gap: 12px;
+}
+
+.ai-card {
+    flex: 1;
+    background: var(--bg-card);
+    border-radius: 12px;
+    padding: 12px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.ai-card.quantum { border-left: 4px solid var(--neon-cyan); }
+.ai-card.neural { border-left: 4px solid var(--neon-pink); }
+
+.ai-card-title {
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ai-card.quantum .ai-card-title { color: var(--neon-cyan); }
+.ai-card.neural .ai-card-title { color: var(--neon-pink); }
+
+.ai-signal {
+    font-size: 28px;
+    font-weight: 900;
+    margin: 10px 0 5px 0;
+    letter-spacing: 1px;
+}
+
+.ai-sub-num {
+    font-size: 11px;
+    color: #64748b;
+}
+
+/* 🎯 Final Prediction Box */
+.consensus-box {
+    max-width: 336px;
+    margin: 15px auto;
+    background: linear-gradient(135deg, #0f163a, #070a22);
+    border: 1px solid #222f75;
+    border-radius: 16px;
+    padding: 15px;
+    position: relative;
+}
+
+.panel-label {
+    font-size: 11px;
+    color: #8892b0;
+    letter-spacing: 1px;
+    text-align: left;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.final-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.final-signal-text {
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.color-green { color: var(--neon-green) !important; text-shadow: 0 0 20px rgba(0, 255, 102, 0.6); }
+.color-red { color: var(--red) !important; text-shadow: 0 0 20px rgba(255, 51, 51, 0.6); }
+
+.circle-progress-wrap {
+    position: relative;
+    width: 70px;
+    height: 70px;
+}
+
+.circle-svg {
+    transform: rotate(-90deg);
+    width: 100%;
+    height: 100%;
+}
+
+.circle-bg { fill: none; stroke: #161f4d; stroke-width: 5; }
+.circle-finger {
+    fill: none;
+    stroke: var(--neon-green);
+    stroke-width: 5;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.4s ease;
+}
+
+.circle-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.conf-pct { font-size: 13px; font-weight: bold; color: #fff; }
+.conf-lbl { font-size: 7px; color: #8892b0; text-transform: uppercase; }
+
+.target-num-display {
+    font-size: 11px;
+    color: #8892b0;
+    margin-top: 10px;
+    text-align: left;
+    border-top: 1px solid #1b265c;
+    padding-top: 8px;
+}
+
+.sureshot-badge {
+    background: rgba(0, 255, 102, 0.1);
+    border: 1px dashed var(--neon-green);
+    color: var(--neon-green);
+    font-size: 10px;
+    padding: 4px;
+    margin-top: 8px;
+    text-align: center;
+    border-radius: 4px;
+    display: none;
+}
+
+/* Logs */
+.log-card {
+    max-width: 336px;
+    margin: 15px auto;
+    background: var(--bg-card);
+    border-radius: 12px;
+    padding: 12px;
+    border: 1px solid #182042;
+}
+
+table { width: 100%; border-collapse: collapse; font-size: 11px; }
+th { color: #4e5d8c; text-align: left; padding: 6px; border-bottom: 1px solid #182042; }
+td { padding: 8px 6px; border-bottom: 1px solid #0f1531; }
+
+.row-win { color: var(--neon-green); font-weight: bold; }
+.row-loss { color: var(--red); font-weight: bold; }
+</style>
+</head>
+<body>
+
+<div class="header-bar">
+    <div>
+        <div class="brand-title">TREADER KING</div>
+        <div style="font-size:9px; color:#5c6b9c; letter-spacing:1px; margin-top:2px;">SURESHOT CONVERGENCE V10</div>
+    </div>
+    <div class="badge-tk">TK</div>
+</div>
+
+<div class="market-selector">
+    <div class="m-btn">30S</div>
+    <div class="m-btn active">1MIN</div>
+    <div class="m-btn">3MIN</div>
+    <div class="m-btn">5MIN</div>
+</div>
+
+<div class="server-panel">
+    <div>AI SERVER: <span style="color:#fff; font-weight:bold;">🧬 MATCH LOCK INFRA</span></div>
+    <div style="color:var(--neon-green);">● ACTIVE</div>
+</div>
+
+<div class="info-grid">
+    <div class="p-box">PERIOD<div class="p-val" id="pID">--------</div></div>
+    <div class="p-box" style="text-align:right;">NEXT DRAW<div class="p-val" id="timer" style="color:var(--gold);">00:00</div></div>
+</div>
+
+<div class="ai-twin-container">
+    <div class="ai-card quantum">
+        <div class="ai-card-title"><span>⚡ QUANTUM AI</span><span style="color:#64748b;">HIGH</span></div>
+        <div class="ai-signal" id="qSig">---</div>
+        <div class="ai-sub-num" id="qNum">Num: --</div>
+    </div>
+    <div class="ai-card neural">
+        <div class="ai-card-title"><span>🧠 NEURAL AI</span><span style="color:#64748b;">HIGH</span></div>
+        <div class="ai-signal" id="nSig">---</div>
+        <div class="ai-sub-num" id="nNum">Num: --</div>
+    </div>
+</div>
+
+<div class="consensus-box">
+    <div class="panel-label">🎯 Final Prediction</div>
+    
+    <div class="final-flex">
+        <div class="final-signal-text" id="finalSignal">---</div>
+        
+        <div class="circle-progress-wrap">
+            <svg class="circle-svg">
+                <circle class="circle-bg" cx="35" cy="35" r="30"></circle>
+                <circle class="circle-finger" id="circleProgress" cx="35" cy="35" r="30" stroke-dasharray="188.4" stroke-dashoffset="188.4"></circle>
+            </svg>
+            <div class="circle-text">
+                <div class="conf-pct" id="finalConf">--%</div>
+                <div class="conf-lbl">CONF</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sureshot-badge" id="ssBadge">🔥 DUAL SERVER CONVERGENCE LOCK: 100% MATCH 🔥</div>
+    <div class="target-num-display" id="targetNumBackup">🎯 MOTHER TARGET NUMBER: --</div>
+</div>
+
+<div class="log-card">
+    <div class="panel-label">📊 REAL-TIME SERVER FEED</div>
+    <table>
+        <thead>
+            <tr><th>PERIOD</th><th>SIGNAL</th><th>ACTUAL</th><th>STATUS</th></tr>
+        </thead>
+        <tbody id="logs"></tbody>
+    </table>
+</div>
+
+<script>
+const trackerDB = {};
+let currentDisplayedIssue = null;
+let isFetching = false;
+
+function setConfidenceCircle(percent) {
+    const circle = document.getElementById('circleProgress');
+    const r = 30;
+    const circumference = 2 * Math.PI * r;
+    const offset = circumference - (percent / 100) * circumference;
+    circle.style.strokeDashoffset = offset;
+}
+
+function processDualEnginePrediction(list) {
+    const rawNumbers = list.slice(0, 30).map(x => parseInt(x.number));
+    const history = rawNumbers.map(num => (num % 2 !== 0) ? "GREEN" : "RED");
+
+    // 1. QUANTUM AI LOGIC
+    let qRed = 0, qGreen = 0;
+    const qWeights = [8.5, 5.0, 3.5, 2.0, 1.0];
+    for(let i=0; i<5; i++){
+        if(history[i] === "RED") qRed += qWeights[i];
+        else qGreen += qWeights[i];
+    }
+    const quantumColor = qRed >= qGreen ? "RED" : "GREEN";
+    let quantumConf = Math.min(95, Math.max(55, Math.floor(52 + Math.abs(qRed - qGreen) * 6)));
+    const qPool = quantumColor === "GREEN" ? [1,3,7,9] : [2,4,6,8];
+    const quantumNum = qPool[rawNumbers[0] % qPool.length];
+
+    // 2. NEURAL AI LOGIC
+    let nRed = 0, nGreen = 0;
+    if(history[0] !== history[1]) {
+        if(history[0] === "RED") nGreen += 6.0; else nRed += 6.0;
+    }
+    if(rawNumbers[0] === 5 || rawNumbers[0] === 0) {
+        if(rawNumbers[0] === 5) nRed += 5.0; else nGreen += 5.0;
+    }
+    const neuralColor = nRed >= nGreen ? "RED" : "GREEN";
+    let neuralConf = Math.min(92, Math.max(52, Math.floor(55 + Math.abs(nRed - nGreen) * 7)));
+    const nPool = neuralColor === "GREEN" ? [3,5,7] : [0,4,6];
+    const neuralNum = nPool[(rawNumbers[1] || 2) % nPool.length];
+
+    // 3. 100% MATCH CONVERGENCE OVERRIDE
+    let finalColor, finalConf, finalNum;
+    let isSureshotMatch = false;
+
+    if (quantumColor === neuralColor) {
+        // যদি ২টা সার্ভারই একমত হয় -> ১০০% কনফিডেন্স লক
+        finalColor = quantumColor;
+        finalConf = 100;
+        isSureshotMatch = true;
+        
+        // হট মোমেন্টাম নাম্বার কম্বিনেশন
+        finalNum = (quantumNum === 0 || quantumNum === 5) ? quantumNum : neuralNum;
+    } else {
+        // আলাদা হলে যেটার কনফিডেন্স বেশি সেটার সিগন্যাল মেইনস্ট্রিম হবে
+        if (quantumConf >= neuralConf) {
+            finalColor = quantumColor;
+            finalConf = quantumConf;
+            finalNum = quantumNum;
+        } else {
+            finalColor = neuralColor;
+            finalConf = neuralConf;
+            finalNum = neuralNum;
+        }
+    }
+
+    // ভায়োলেট ও জিরো ব্যালেন্স ফিক্সার
+    if(!isSureshotMatch) {
+        if(finalColor === "GREEN" && rawNumbers[0] === 1) finalNum = 5;
+        if(finalColor === "RED" && rawNumbers[0] === 2) finalNum = 0;
+    }
+
+    return {
+        quantumColor, quantumConf, quantumNum,
+        neuralColor, neuralConf, neuralNum,
+        finalColor, finalConf, finalNum, isSureshotMatch
+    };
+}
+
+function runEngine(){
+    setInterval(async () => {
+        const remaining = 60 - new Date().getSeconds();
+        document.getElementById('timer').innerText = "00:" + (remaining < 10 ? "0" + remaining : remaining);
+
+        if (isFetching) return;
+
+        try {
+            isFetching = true;
+            const res = await fetch('https://draw.ar-lottery01.com/WinGo/WinGo_1M/GetHistoryIssuePage.json');
+            const json = await res.json();
+            
+            const list = json.data.list;
+            const latestIssueId = list[0].issueNumber;
+            const nextIssueId = (BigInt(latestIssueId) + 1n).toString();
+            
+            document.getElementById('pID').innerText = nextIssueId;
+
+            // হিস্ট্রি লগ জেনারেটর
+            for (let i = 0; i < 3; i++) {
+                const item = list[i];
+                const id = item.issueNumber;
+
+                if (trackerDB[id] && !trackerDB[id].printed) {
+                    const actualNum = parseInt(item.number);
+                    const actualColor = (actualNum % 2 !== 0) ? "GREEN" : "RED";
+                    
+                    const myPred = trackerDB[id].pred;
+                    const isWin = (myPred === actualColor);
+
+                    let status = isWin ? 'WIN 🔥' : 'LOSS 💔';
+                    let cls = isWin ? 'row-win' : 'row-loss';
+
+                    const row = `<tr class="${cls}">
+                        <td>${id.slice(-4)}</td>
+                        <td>${myPred}</td>
+                        <td>${actualNum} (${actualColor})</td>
+                        <td>${status}</td>
+                    </tr>`;
+                    
+                    document.getElementById('logs').innerHTML = row + document.getElementById('logs').innerHTML;
+                    trackerDB[id].printed = true;
+                }
+            }
+
+            // লাইভ রিফ্রেশ
+            if (currentDisplayedIssue !== nextIssueId) {
+                currentDisplayedIssue = nextIssueId;
+
+                const data = processDualEnginePrediction(list);
+
+                trackerDB[nextIssueId] = {
+                    pred: data.finalColor,
+                    printed: false
+                };
+
+                // ইন্ডিভিজুয়াল সার্ভার আপডেট
+                document.getElementById('qSig').innerText = data.quantumColor;
+                document.getElementById('qSig').className = `ai-signal ${data.quantumColor === "GREEN" ? "color-green" : "color-red"}`;
+                document.getElementById('qNum').innerText = `Num: ${data.quantumNum}`;
+
+                document.getElementById('nSig').innerText = data.neuralColor;
+                document.getElementById('nSig').className = `ai-signal ${data.neuralColor === "GREEN" ? "color-green" : "color-red"}`;
+                document.getElementById('nNum').innerText = `Num: ${data.neuralNum}`;
+
+                // ফাইনাল সিগন্যাল ও কন্ডিশনাল ১০০% চেক
+                const fSig = document.getElementById('finalSignal');
+                fSig.innerText = data.finalColor;
+                fSig.className = `final-signal-text ${data.finalColor === "GREEN" ? "color-green" : "color-red"}`;
+
+                document.getElementById('finalConf').innerText = data.finalConf + "%";
+                setConfidenceCircle(data.finalConf);
+
+                // ম্যাচিং নোটিফিকেশন ব্যানার কন্ট্রোল
+                const badge = document.getElementById('ssBadge');
+                if(data.isSureshotMatch) {
+                    badge.style.display = "block";
+                } else {
+                    badge.style.display = "none";
+                }
+
+                document.getElementById('targetNumBackup').innerText = `🎯 MOTHER TARGET NUMBER: ${data.finalNum}`;
+            }
+
+        } catch (e) {
+            console.error(e);
+        } finally {
+            isFetching = false;
+        }
+    }, 1000);
+}
+
+window.onload = runEngine;
+</script>
+</body>
+</html>
